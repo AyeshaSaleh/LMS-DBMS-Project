@@ -1,0 +1,86 @@
+﻿<Window x:Class="library_management_system.AdminAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Admin Account"
+        Height="1080" Width="1920"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource DarkBackgroundBrush}">
+        <!-- Navigation Bar -->
+        <Border Background="#1E1E1E" Height="50" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Library Management System" 
+                           Foreground="White" 
+                           FontSize="18" 
+                           FontWeight="Bold"
+                           VerticalAlignment="Center" 
+                           Margin="10,0,0,0" 
+                           HorizontalAlignment="Left"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                    <Button Content="Dashboard" Style="{StaticResource NavButtonStyle}" Click="GoToDashboard" Width="71"/>
+                    <Button Content="Manage Users" Style="{StaticResource NavButtonStyle}" Click="GoToManageUsers" Width="93"/>
+                    <Button Content="Borrowing Policies" Style="{StaticResource NavButtonStyle}" Click="GoToBorrowingPolicies" Width="118"/>
+                    <Button Content="Book Inventory" Style="{StaticResource NavButtonStyle}" Click="GoToBookInventory" Width="97"/>
+                    <Button Content="Reports" Style="{StaticResource NavButtonStyle}" Click="GoToReports" Width="50"/>
+                    <Button Content="Account" Style="{StaticResource NavButtonStyle}" Click="GoToAccount" Height="25" Width="56"/>
+                    <Button Content="Logout" Background="#FFB22036" Foreground="White" FontSize="16" Width="72" Height="26" Margin="10,0,0,0" Cursor="Hand" Click="Logout"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,50,0,0">
+            <StackPanel Width="1200" Margin="20" HorizontalAlignment="Center">
+                <Border Style="{StaticResource PanelStyle}" Margin="5,100,5,5">
+                    <StackPanel>
+                        <TextBlock Text="Update Personal Information" Style="{StaticResource HeaderTextStyle}"/>
+
+                        <!-- First Name -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <TextBlock Text="First Name:" Foreground="White" FontSize="16" Width="150" VerticalAlignment="Center"/>
+                            <TextBox Style="{StaticResource TextBoxStyle}" x:Name="FirstNameBox" Width="200" Height="37"/>
+                        </StackPanel>
+
+                        <!-- Last Name -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <TextBlock Text="Last Name:" Foreground="White" FontSize="16" Width="150" VerticalAlignment="Center"/>
+                            <TextBox Style="{StaticResource TextBoxStyle}" x:Name="LastNameBox" Width="200" Height="37"/>
+                        </StackPanel>
+
+                        <!-- Email -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <TextBlock Text="Email:" Foreground="White" FontSize="16" Width="150" VerticalAlignment="Center"/>
+                            <TextBox Style="{StaticResource TextBoxStyle}" x:Name="EmailBox" TextChanged="EmailBox_TextChanged" Height="37"/>
+                        </StackPanel>
+
+                        <!-- Phone Number -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5"/>
+
+                        <!-- Password -->
+                        <StackPanel Orientation="Horizontal" Margin="0,5">
+                            <TextBlock Text="Password:" Foreground="White" FontSize="16" Width="150" VerticalAlignment="Center"/>
+                            <PasswordBox Style="{StaticResource PasswordBoxStyle}" x:Name="PasswordBox" Height="39"/>
+                        </StackPanel>
+
+                        <!-- Update Button -->
+                        <Button Content="Update Information" 
+                                Style="{StaticResource ActionButtonStyle}" 
+                                HorizontalAlignment="Center" 
+                                Margin="0,20" 
+                                Click="UpdateInformation" Width="160" Height="30"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

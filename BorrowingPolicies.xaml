@@ -1,0 +1,142 @@
+﻿<Window x:Class="library_management_system.BorrowingPolicies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Borrowing Policies" 
+        Height="1080" 
+        Width="1920" 
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Navigation Bar -->
+        <Border Background="#1E1E1E" Height="50" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Library Management System" 
+                           Foreground="White" 
+                           FontSize="18" 
+                           FontWeight="Bold"
+                           VerticalAlignment="Center" 
+                           Margin="10,0,0,0" 
+                           HorizontalAlignment="Left"/>
+
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center" 
+                            Margin="0,0,10,0">
+                    <Button Content="Dashboard" Click="GoToDashboard" Style="{StaticResource NavButtonStyle}"/>
+                    <Button Content="Manage Users" Click="GoToManageUsers" Style="{StaticResource NavButtonStyle}"/>
+                    <Button Content="Borrowing Policies" Click="GoToBorrowingPolicies" Style="{StaticResource NavButtonStyle}"/>
+                    <Button Content="Book Inventory" Click="GoToBooks" Style="{StaticResource NavButtonStyle}"/>
+                    <Button Content="Reports" Click="GoToReports" Style="{StaticResource NavButtonStyle}"/>
+                    <Button Content="Account" Click="GoToAccount" Style="{StaticResource NavButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <ScrollViewer Margin="20,60,20,20" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Borrowing Policy Configuration"
+                           Style="{StaticResource HeaderTextStyle}"/>
+
+                <!-- LOAN PERIOD SETTINGS -->
+                <Border Style="{StaticResource PanelStyle}" Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="Loan Period Settings" Style="{StaticResource HeaderTextStyle}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Standard Loan -->
+                            <TextBlock Text="Standard Loan Period (days):" 
+                                       Foreground="White" Grid.Row="0" Grid.Column="0"/>
+                            <TextBox x:Name="txtStandardLoan" Style="{StaticResource TextBoxStyle}"
+                                     Grid.Row="0" Grid.Column="1" Height="40"/>
+                            <TextBlock Text="For regular members" Foreground="Gray" 
+                                       Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"/>
+
+                            <!-- Extended Loan -->
+                            <TextBlock Text="Extended Loan Period (days):" 
+                                       Foreground="White" Grid.Row="1" Grid.Column="0"/>
+                            <TextBox x:Name="txtExtendedLoan" Style="{StaticResource TextBoxStyle}"
+                                     Grid.Row="1" Grid.Column="1" Height="40"/>
+                            <TextBlock Text="For premium members" Foreground="Gray" 
+                                       Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"/>
+
+                            <!-- Renewals -->
+                            <TextBlock Text="Maximum Renewals:" 
+                                       Foreground="White" Grid.Row="2" Grid.Column="0"/>
+                            <TextBox x:Name="txtMaxRenewals" Style="{StaticResource TextBoxStyle}"
+                                     Grid.Row="2" Grid.Column="1" Height="33"/>
+                            <TextBlock Text="Per item" Foreground="Gray" 
+                                       Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- FINE CALCULATION SETTINGS -->
+                <Border Style="{StaticResource PanelStyle}" Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="Fine Calculation" Style="{StaticResource HeaderTextStyle}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Daily Fine -->
+                            <TextBlock Text="Daily Fine Rate ($):" 
+                                       Foreground="White" Grid.Row="0" Grid.Column="0"/>
+                            <TextBox x:Name="txtDailyFine" Style="{StaticResource TextBoxStyle}"
+                                     Grid.Row="0" Grid.Column="1" Height="40"/>
+
+                            <!-- Maximum Fine -->
+                            <TextBlock Text="Maximum Fine ($):" 
+                                       Foreground="White" Grid.Row="1" Grid.Column="0"/>
+                            <TextBox x:Name="txtMaxFine" Style="{StaticResource TextBoxStyle}"
+                                     Grid.Row="1" Grid.Column="1" Height="40"/>
+
+                            <!-- Grace Period -->
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- MEMBERSHIP SETTINGS -->
+
+                <!-- SAVE BUTTON -->
+                <Button Content="Save Policy Changes" 
+                        Click="SaveChanges" 
+                        Style="{StaticResource ActionButtonStyle}" 
+                        HorizontalAlignment="Center" 
+                        Width="300" 
+                        Height="40" 
+                        Margin="0,20"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

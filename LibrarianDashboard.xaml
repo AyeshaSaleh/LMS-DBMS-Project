@@ -1,0 +1,133 @@
+﻿<Window x:Class="Library_Management_System.LibrarianDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Librarian Dashboard"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        Background="#FF121212">
+
+    <!-- Viewbox to scale to 1920x1080 -->
+    <Viewbox Stretch="Fill">
+        <Grid Width="1920" Height="1080">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Navigation Bar -->
+            <StackPanel Grid.Row="0" Background="#FF1E1E1E">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="10,5"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="#20B2AA" BlurRadius="5" ShadowDepth="0"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#20B2AA"/>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="#20B2AA" BlurRadius="10" ShadowDepth="0"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Library Management System" Grid.Column="0"
+                               FontSize="20" FontWeight="Bold" Margin="10,5" Foreground="White"/>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="DashboardButton" Content="Dashboard" Background="LightSeaGreen" Click="DashboardButton_Click"/>
+                        <Button x:Name="BookStatusButton" Content="Book Status" Background="LightSeaGreen" Click="BookStatusButton_Click"/>
+                        <Button x:Name="IssueReserveButton" Content="Issue/Reserve" Background="LightSeaGreen" Click="IssueReserveButton_Click"/>
+                        <Button x:Name="MemberRecordsButton" Content="Member Records" Background="LightSeaGreen" Click="MemberRecordsButton_Click"/>
+                        <Button x:Name="FineCollectionButton" Content="Fine Collection" Background="LightSeaGreen" Click="FineCollectionButton_Click"/>
+                        <Button x:Name="AccountButton" Content="Account" Background="LightSeaGreen" Click="AccountButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <!-- Main Content -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <Grid Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Summary Panel -->
+                    <Border Grid.Column="0" Background="#FF1E1E1E" Margin="0,0,27,0" Padding="20" CornerRadius="5" Grid.ColumnSpan="2">
+                        <StackPanel>
+                            <TextBlock Text="Summary" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Total Books -->
+                                <Border Grid.Row="0" Grid.Column="0" Background="#0A0B1E" Margin="5" Padding="15" CornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Text="Total Books" Foreground="White" FontSize="14"/>
+                                        <TextBlock x:Name="txtTotalBooks" Text="-" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Available Books -->
+                                <Border Grid.Row="0" Grid.Column="1" Background="#0A0B1E" Margin="5" Padding="15" CornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Text="Available Books" Foreground="White" FontSize="14"/>
+                                        <TextBlock x:Name="txtAvailableBooks" Text="-" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Issued Books -->
+                                <Border Grid.Row="1" Grid.Column="0" Background="#0A0B1E" Margin="5" Padding="15" CornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Text="Issued Books" Foreground="White" FontSize="14"/>
+                                        <TextBlock x:Name="txtIssuedBooks" Text="-" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Border>
+
+
+                                <!-- Late Returns -->
+                                <Border Grid.Row="1" Grid.Column="1" Background="#0A0B1E" Margin="5" Padding="15" CornerRadius="5">
+                                    <StackPanel>
+                                        <TextBlock Text="Late Returns" Foreground="White" FontSize="14"/>
+                                        <TextBlock x:Name="txtLateReturns" Text="-" Foreground="White" FontSize="24" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Border>
+
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                
+                </Grid>
+            </ScrollViewer>
+
+            <!-- Footer -->
+            <Grid Grid.Row="2" Background="#1A1B3E" Height="30"/>
+        </Grid>
+    </Viewbox>
+</Window>

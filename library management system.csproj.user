@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AdminAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BooksManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="BorrowingPolicies.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Creditpg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditUserWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianAccount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianBook Status.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianDashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianFine.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianIssue.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LibrarianMemberRecords.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ManageUsers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProjectOverview.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Reports.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AdminAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BooksManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BorrowingPolicies.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Creditpg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditUserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianAccount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianBook Status.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianFine.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianIssue.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LibrarianMemberRecords.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ManageUsers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProjectOverview.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Reports.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

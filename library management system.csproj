@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>library_management_system</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="logo-whote %281%29.png" />
+    <None Remove="Screenshot 2025-04-05 141146.png" />
+    <None Remove="Screenshot 2025-04-05 141326.png" />
+    <None Remove="Screenshot 2025-04-05 141506.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+    <PackageReference Include="MySql.Data" Version="9.3.0" />
+    <PackageReference Include="OxyPlot.Core" Version="2.2.0" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.2.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo-whote (1).png" />
+    <Resource Include="Screenshot 2025-04-05 141146.png" />
+    <Resource Include="Screenshot 2025-04-05 141326.png" />
+    <Resource Include="Screenshot 2025-04-05 141506.png" />
+  </ItemGroup>
+
+</Project>
