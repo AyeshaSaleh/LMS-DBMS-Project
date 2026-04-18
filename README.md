@@ -1,6 +1,6 @@
 # 📚 LMS — Library Management System
 
-**LMS One** is a robust desktop application developed as part of a Database Management Systems course. It features a modern, dark-themed UI and a structured MySQL backend to handle the complex workflows of a modern library.
+**LMS ** is a robust desktop application developed as part of a Database Management Systems course. It features a modern, dark-themed UI and a structured MySQL backend to handle the complex workflows of a modern library.
 
 ---
 
